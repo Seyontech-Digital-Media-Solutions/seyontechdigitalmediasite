@@ -58,6 +58,7 @@ export default function OurWork() {
         />
       )}
 
+
       {/* ── Two-column layout: content + sidebar ── */}
       <div className="bp-layout">
 

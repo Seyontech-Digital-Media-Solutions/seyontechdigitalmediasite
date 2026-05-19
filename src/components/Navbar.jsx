@@ -3,6 +3,7 @@ import { useNavigate, useLocation } from "react-router-dom";
 import seyoon from "../assets/logos/seyoon.png";
 import PricingModal from "./PricingModal";
 import "../styles/navbar.css";
+// import { Link } from "react-router-dom";
 
 export default function Navbar() {
   const [showModal, setShowModal] = useState(false);
@@ -17,7 +18,7 @@ export default function Navbar() {
     if (location.pathname === "/") {
       // Already on home — just scroll to section
       const el = document.querySelector(anchor);
-      if (el) el.scrollIntoView({ behavior: "smooth" });
+      if (el) el.scrollIntoView({ behavior: "smooth"});
     } else {
       // On another page — navigate home, then scroll after page loads
       navigate("/");
@@ -40,12 +41,14 @@ export default function Navbar() {
         </div>
 
         {/* DESKTOP NAV */}
-        <nav className="nav-links">
-          <a href="#home"     onClick={(e) => handleNavClick(e, "#home")}>Home</a>
-          <a href="#about"    onClick={(e) => handleNavClick(e, "#about")}>About</a>
-          <a href="#services" onClick={(e) => handleNavClick(e, "#services")}>Services</a>
-          <a href="#contact"  onClick={(e) => handleNavClick(e, "#contact")}>Contact</a>
-        </nav>
+       <nav className="nav-links">
+  <a href="#home"     onClick={(e) => handleNavClick(e, "#home")}>Home</a>
+  <a href="#about"    onClick={(e) => handleNavClick(e, "#about")}>About</a>
+  <a href="#services" onClick={(e) => handleNavClick(e, "#services")}>Services</a>
+  <a href="/careers">Careers</a>
+  <a href="#contact"  onClick={(e) => handleNavClick(e, "#contact")}>Contact</a>
+ 
+</nav>
 
         {/* RIGHT SIDE */}
         <div className="nav-right">
