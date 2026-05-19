@@ -46,9 +46,9 @@ export default function BlogCard({ post, index, onRead }) {
       {/* ── Body ── */}
       <div className="bp-card-body">
         <div className="bp-card-meta">
-          <span className="bp-meta-item">📅 {post.date}</span>
+          <span className="bp-meta-item"> {post.date}</span>
           <span className="bp-meta-dot" />
-          <span className="bp-meta-item">⏱ {post.readTime}</span>
+          <span className="bp-meta-item">{post.readTime}</span>
         </div>
 
         <h2 className="bp-card-title">{post.title}</h2>

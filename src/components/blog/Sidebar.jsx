@@ -77,7 +77,7 @@ export default function Sidebar({ posts, activeCategory, onCategoryChange, onSel
 
       {/* ── CTA widget ── */}
       <div className="bp-cta-widget">
-        <div className="bp-cta-widget-icon">🚀</div>
+        <div className="bp-cta-widget-icon"></div>
         <div className="bp-cta-widget-heading">Ready to Grow?</div>
         <div className="bp-cta-widget-sub">
           Tell us about your brand. We'll build your next case study together.

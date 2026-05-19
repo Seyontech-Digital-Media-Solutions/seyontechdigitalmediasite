@@ -45,7 +45,7 @@ export default function Navbar() {
   <a href="#home"     onClick={(e) => handleNavClick(e, "#home")}>Home</a>
   <a href="#about"    onClick={(e) => handleNavClick(e, "#about")}>About</a>
   <a href="#services" onClick={(e) => handleNavClick(e, "#services")}>Services</a>
- 
+
   <a href="#contact"  onClick={(e) => handleNavClick(e, "#contact")}>Contact</a>
  
 </nav>

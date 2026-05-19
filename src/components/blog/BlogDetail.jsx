@@ -1,18 +1,11 @@
 import { useEffect } from "react";
 import BlogImage from "./BlogImage";
 
-/**
- * BlogDetail
- * Props:
- *   post     {object}   — the post to display
- *   onBack   {function} — called with no args to return to listing,
- *                         or with a related post object to navigate directly
- *   allPosts {array}    — full list used to build "Related" section
- */
+
+
 export default function BlogDetail({ post, onBack, allPosts }) {
 const related = allPosts.filter((p) => p.id !== post.id).slice(0, 3);
 
-  // Scroll to top whenever the displayed post changes
   useEffect(() => {
     window.scrollTo({ top: 0, behavior: "smooth" });
   }, [post.id]);
@@ -48,13 +41,13 @@ const related = allPosts.filter((p) => p.id !== post.id).slice(0, 3);
       {/* ── Meta bar ── */}
       <div className="bd-meta-bar">
         <span className="bd-meta-item">
-          <span className="bd-meta-icon">📅</span>{post.date}
+          <span className="bd-meta-icon"></span>{post.date}
         </span>
         <span className="bd-meta-item">
-          <span className="bd-meta-icon">⏱</span>{post.readTime}
+          <span className="bd-meta-icon"></span>{post.readTime}
         </span>
         <span className="bd-meta-item">
-          <span className="bd-meta-icon">✍️</span>{post.author.name}
+          <span className="bd-meta-icon"></span>{post.author.name}
         </span>
       </div>
 
