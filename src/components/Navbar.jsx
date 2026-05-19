@@ -20,7 +20,7 @@ export default function Navbar() {
       const el = document.querySelector(anchor);
       if (el) el.scrollIntoView({ behavior: "smooth"});
     } else {
-      // On another page — navigate home, then scroll after page loads
+  
       navigate("/");
       // Small delay to let the home page render before scrolling
       setTimeout(() => {
@@ -45,7 +45,7 @@ export default function Navbar() {
   <a href="#home"     onClick={(e) => handleNavClick(e, "#home")}>Home</a>
   <a href="#about"    onClick={(e) => handleNavClick(e, "#about")}>About</a>
   <a href="#services" onClick={(e) => handleNavClick(e, "#services")}>Services</a>
-  <a href="/careers">Careers</a>
+ 
   <a href="#contact"  onClick={(e) => handleNavClick(e, "#contact")}>Contact</a>
  
 </nav>
