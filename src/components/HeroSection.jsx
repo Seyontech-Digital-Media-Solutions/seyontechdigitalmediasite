@@ -1,7 +1,11 @@
 import "../styles/hero.css";
 import heroVideo from "../assets/hero.mp4";
 import { useEffect, useRef } from "react";
+<<<<<<< HEAD
 import { Link } from "react-router-dom";
+=======
+// import { Link } from "react-router-dom";
+>>>>>>> aeddf74ba8cdc5cdda39b72ae91c24236d53a4a4
 
 export default function HeroSection() {
   const videoRef = useRef(null);
@@ -45,9 +49,15 @@ export default function HeroSection() {
         <a href="#contact" className="btn-primary-outlined">
   Let's Talk →
 </a>
+<<<<<<< HEAD
         <Link to="/work" className="btn-primary-outlined">
   View Our Work →
 </Link>
+=======
+        {/* <Link to="/work" className="btn-primary-outlined">
+  View Our Work →
+</Link> */}
+>>>>>>> aeddf74ba8cdc5cdda39b72ae91c24236d53a4a4
         </div>
       </div>
     </section>
