@@ -8,7 +8,15 @@ export default function LogoScroll() {
       <div className="logo-wrapper">
         <div className="logo-track">
           {[...logos, ...logos].map((logo, i) => (
-            <img key={i} src={logo} alt="logo" />
+            <img
+              key={i}
+              src={logo}
+              alt={`client-${i}`}
+              loading="lazy"
+              onError={(e) => {
+                e.currentTarget.style.display = "none";
+              }}
+            />
           ))}
         </div>
       </div>
