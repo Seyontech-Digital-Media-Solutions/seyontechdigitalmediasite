@@ -28,7 +28,7 @@ export default function HeroSection() {
 
       <div className="hero-content">
         <div className="hero-badge">
-           AWARD-WINNING CREATIVE AGENCY
+          AWARD-WINNING CREATIVE AGENCY
         </div>
 
         <h1 className="hero-title">
@@ -42,12 +42,12 @@ export default function HeroSection() {
         </p>
 
         <div className="hero-btns">
-        <a href="#contact" className="btn-primary-outlined">
-  Let's Talk →
-</a>
-        <Link to="/work" className="btn-primary-outlined">
-  View Our Work →
-</Link>
+          <a href="#contact" className="btn-primary-outlined">
+            Let's Talk →
+          </a>
+          <Link to="/work" className="btn-primary-outlined">
+            View Our Work →
+          </Link>
         </div>
       </div>
     </section>
