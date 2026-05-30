@@ -52,7 +52,7 @@ export default function Footer() {
         {/* Contact */}
         <div className="footer-col">
           <h4>Contact</h4>
-          <p> seyontechdigitalmarketing@gmail.com</p>
+          <p>seyontechdigitalmarketing@gmail.com</p>
           <p>+91 86104 99770</p>
           <p>Thousand Lights, Chennai-06, Tamil Nadu</p>
         </div>
