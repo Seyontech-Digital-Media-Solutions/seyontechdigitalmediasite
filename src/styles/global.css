@@ -1,0 +1,421 @@
+/* ============================================
+   GLOBAL.CSS — Reset, Variables, Navbar,
+                Logo Scroll, Utilities
+   ============================================ */
+
+/* ─── RESET ──────────────────────────────────── */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Segoe UI", sans-serif;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: #0b0b0f;
+  color: #f8fafc;
+  overflow-x: hidden;
+}
+
+/* ─── CSS VARIABLES ──────────────────────────── */
+:root {
+  --primary: #8B5CF6;
+  --secondary: #3B82F6;
+  --bg-dark: #0B0B0F;
+  --bg-card: #16161d;
+  --text-main: #F8FAFC;
+  --text-muted: #94a3b8;
+  --transition: 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* ─── GRADIENT TEXT ──────────────────────────── */
+.text-gradient {
+  background: linear-gradient(to right, #8b5cf6, #3b82f6);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* ─── SHARED BUTTON ──────────────────────────── */
+.btn {
+  padding: 10px 20px;
+  border-radius: 8px;
+  border: none;
+  background: #6d28d9;
+  color: white;
+  cursor: pointer;
+  font-size: 0.95rem;
+  font-weight: 600;
+  transition: 0.3s ease;
+}
+
+.btn:hover {
+  background: #5b21b6;
+  transform: translateY(-2px);
+}
+
+/* ─── FADE UP ANIMATION ──────────────────────── */
+.fade-up {
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeUp 0.8s forwards;
+}
+
+.delay-1 { animation-delay: 0.2s; }
+.delay-2 { animation-delay: 0.4s; }
+.delay-3 { animation-delay: 0.6s; }
+
+@keyframes fadeUp {
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* ═══════════════════════════════════════════════
+   NAVBAR
+═══════════════════════════════════════════════ */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 18px 8%;
+  background: #020617;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+/* LOGO */
+.nav-left {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.logo-img {
+  width: 44px;
+  height: 44px;
+  object-fit: contain;
+  border-radius: 8px;
+}
+
+.logo-text {
+  font-size: 18px;
+  font-weight: 700;
+  color: white;
+}
+
+/* DESKTOP LINKS */
+.nav-links {
+  display: flex;
+  gap: 32px;
+}
+
+.nav-links a {
+  color: #cbd5f5;
+  text-decoration: none;
+  font-size: 15px;
+  transition: color 0.3s;
+  position: relative;
+}
+
+.nav-links a::after {
+  content: "";
+  position: absolute;
+  bottom: -4px;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: #8b5cf6;
+  transition: width 0.3s ease;
+}
+
+.nav-links a:hover {
+  color: white;
+}
+
+.nav-links a:hover::after {
+  width: 100%;
+}
+
+/* GET STARTED BUTTON */
+.nav-cta {
+  padding: 10px 22px;
+  border-radius: 8px;
+  border: none;
+  background: #6d28d9;
+  color: white;
+  cursor: pointer;
+  font-size: 0.9rem;
+  font-weight: 600;
+  transition: 0.3s ease;
+  text-decoration: none;
+}
+
+.nav-cta:hover {
+  background: #5b21b6;
+  transform: translateY(-2px);
+}
+
+/* HAMBURGER BUTTON — hidden on desktop */
+.hamburger {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  cursor: pointer;
+  background: none;
+  border: none;
+  padding: 4px;
+}
+
+.hamburger span {
+  display: block;
+  width: 24px;
+  height: 2px;
+  background: white;
+  border-radius: 2px;
+  transition: all 0.3s ease;
+  transform-origin: center;
+}
+
+/* HAMBURGER → X animation */
+.hamburger.open span:nth-child(1) {
+  transform: translateY(7px) rotate(45deg);
+}
+
+.hamburger.open span:nth-child(2) {
+  opacity: 0;
+  transform: scaleX(0);
+}
+
+.hamburger.open span:nth-child(3) {
+  transform: translateY(-7px) rotate(-45deg);
+}
+
+/* MOBILE MENU DRAWER */
+.mobile-menu {
+  display: none;
+  flex-direction: column;
+  background: #0f172a;
+  padding: 0;
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.4s ease, padding 0.3s ease;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.mobile-menu.open {
+  display: flex;
+  max-height: 400px;
+  padding: 10px 0 20px;
+}
+
+.mobile-menu a {
+  color: #cbd5f5;
+  text-decoration: none;
+  font-size: 16px;
+  padding: 14px 8%;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+  transition: background 0.2s, color 0.2s;
+}
+
+.mobile-menu a:hover {
+  background: rgba(139, 92, 246, 0.08);
+  color: white;
+}
+
+.mobile-menu .mobile-cta {
+  margin: 16px 8% 0;
+  padding: 14px;
+  background: #6d28d9;
+  color: white;
+  border-radius: 10px;
+  text-align: center;
+  font-weight: 600;
+  font-size: 15px;
+  border-bottom: none;
+}
+
+.mobile-menu .mobile-cta:hover {
+  background: #5b21b6;
+}
+
+/* ─── RESPONSIVE NAVBAR ──────────────────────── */
+@media (max-width: 768px) {
+  .navbar {
+    padding: 16px 5%;
+  }
+
+  /* hide desktop links & CTA button */
+  .nav-links,
+  .nav-cta {
+    display: none;
+  }
+
+  /* show hamburger */
+  .hamburger {
+    display: flex;
+  }
+}
+
+/* ═══════════════════════════════════════════════
+   LOGO SCROLL SECTION
+═══════════════════════════════════════════════ */
+.logo-section {
+  padding: 80px 20px;
+  text-align: center;
+  overflow: hidden;
+  background: #020617;
+}
+
+.logo-section h2 {
+  font-size: 2rem;
+  margin-bottom: 90px;
+  color: #fff;
+}
+
+.logo-section p {
+  color: #94a3b8;
+  margin-bottom: 40px;
+  font-size: 1rem;
+}
+
+.logo-wrapper {
+  position: relative;
+  overflow: hidden;
+}
+
+/* fade edges */
+.logo-wrapper::before,
+.logo-wrapper::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  width: 100px;
+  height: 100%;
+  z-index: 2;
+}
+
+.logo-wrapper::before {
+  left: 0;
+  background: linear-gradient(to right, #020617, transparent);
+}
+
+.logo-wrapper::after {
+  right: 0;
+  background: linear-gradient(to left, #020617, transparent);
+}
+
+.logo-track {
+  display: flex;
+  gap: 60px;
+  width: max-content;
+  animation: logoScroll 25s linear infinite;
+}
+
+.logo-track img {
+  width: 120px;
+  height: auto;
+  opacity: 0.7;
+  transition: 0.3s;
+  object-fit: contain;
+}
+
+.logo-track img:hover {
+  opacity: 1;
+  transform: scale(1.1);
+}
+
+@keyframes logoScroll {
+  from { transform: translateX(0); }
+  to   { transform: translateX(-50%); }
+}
+
+/* ─── RESPONSIVE LOGO SCROLL ─────────────────── */
+@media (max-width: 768px) {
+  .logo-section {
+    padding: 50px 0;
+  }
+  .logo-section h2 {
+    font-size: 1.5rem;
+    padding: 0 20px;
+  }
+  .logo-section p {
+    font-size: 0.9rem;
+    padding: 0 20px;
+  }
+  .logo-track img {
+    width: 80px;
+  }
+  .logo-track {
+    gap: 40px;
+  }
+}
+
+
+
+.why-card:hover .why-icon-box {
+  transform: scale(1.1) rotate(5deg);
+}
+
+.why-icon-box.purple { background: rgba(168, 85, 247, 0.1); color: #a855f7; }
+.why-icon-box.blue   { background: rgba(59, 130, 246, 0.1);  color: #3b82f6; }
+.why-icon-box.orange { background: rgba(249, 115, 22, 0.1);  color: #f97316; }
+.why-icon-box.green  { background: rgba(34, 197, 94, 0.1);   color: #22c55e; }
+.why-icon-box.pink   { background: rgba(236, 72, 153, 0.1);  color: #ec4899; }
+.why-icon-box.yellow { background: rgba(234, 179, 8, 0.1);   color: #eab308; }
+.why-icon-box.violet { background: rgba(139, 92, 246, 0.1);  color: #8b5cf6; }
+
+.why-card h3 {
+  font-size: 1.1rem;
+  color: #fff;
+  margin-bottom: 10px;
+}
+
+.why-card p {
+  font-size: 0.9rem;
+  color: #94a3b8;
+  margin-bottom: 15px;
+  line-height: 1.5;
+}
+
+.why-list {
+  list-style: none;
+  padding: 0;
+  margin-top: auto;
+}
+
+.why-list li {
+  font-size: 0.82rem;
+  color: #cbd5e1;
+  padding-left: 20px;
+  position: relative;
+  margin-bottom: 8px;
+}
+
+.why-list li::before {
+  content: "→";
+  position: absolute;
+  left: 0;
+  color: #8b5cf6;
+  font-weight: bold;
+}
+
+
+html, body {
+  overflow-x: hidden;
+  max-width: 100%;
+}
+
+#root {
+  overflow-x: hidden;
+  max-width: 100%;
+}
+/* When modal is open, lock body scroll and remove scrollbar gap */
+body.modal-open {
+  overflow: hidden;
+}
+
