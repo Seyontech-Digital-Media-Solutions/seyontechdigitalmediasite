@@ -1,0 +1,134 @@
+.footer {
+  background: #0b0b14;
+  color: #fff;
+  padding: 70px 10% 20px;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Glow effect */
+.footer::before {
+  content: "";
+  position: absolute;
+  width: 500px;
+  height: 500px;
+  background: radial-gradient(circle, rgba(139,92,246,0.25), transparent 70%);
+  top: -200px;
+  left: -200px;
+  filter: blur(40px);
+}
+
+/* Container */
+.footer-container {
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr 1.2fr;
+  gap: 50px;
+  position: relative;
+}
+
+/* Logo */
+.logo {
+  font-size: 26px;
+  font-weight: bold;
+}
+
+.logo span {
+  color: #00ffc8;
+}
+
+/* Text */
+.footer-col p {
+  color: #aaa;
+  line-height: 1.6;
+  margin-top: 10px;
+}
+
+/* Links */
+.footer-col ul {
+  list-style: none;
+  padding: 0;
+  margin-top: 10px;
+}
+
+.footer-col ul li {
+  margin: 10px 0;
+}
+
+.footer-col ul li a {
+  color: #aaa;
+  text-decoration: none;
+  transition: 0.3s;
+}
+
+.footer-col ul li a:hover {
+  color: #00ffc8;
+  transform: translateX(5px);
+}
+
+/* Social */
+.socials {
+  display: flex;
+  gap: 15px;
+  margin-top: 15px;
+}
+
+.socials a {
+  color: #fff;
+  font-size: 18px;
+  transition: 0.3s;
+}
+
+.socials a:hover {
+  color: #00ffc8;
+  transform: translateY(-3px);
+}
+
+/* Bottom */
+.footer-bottom {
+  margin-top: 50px;
+  border-top: 1px solid #222;
+  padding-top: 20px;
+  display: flex;
+  justify-content: space-between;
+  color: #777;
+}
+
+.legal a {
+  margin-left: 15px;
+  color: #8b5cf6;
+  text-decoration: none;
+}
+
+.legal a:hover {
+  color: #8b5cf6;
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+  .footer-container {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media (max-width: 600px) {
+  .footer-container {
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
+
+  .socials {
+    justify-content: center;
+  }
+
+  .footer-bottom {
+    flex-direction: column;
+    gap: 10px;
+    text-align: center;
+  }
+}
+
+.logo span,
+.footer-col ul li a:hover,
+.socials a:hover {
+  color: #8b5cf6; /* electric violet */
+}
