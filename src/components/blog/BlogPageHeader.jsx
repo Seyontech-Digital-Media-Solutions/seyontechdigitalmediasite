@@ -1,8 +1,10 @@
+import { Link } from "react-router-dom";
+
 /**
  * BlogPageHeader
  * Props:
- *   selectedPost {object|null} — when non-null, shows detail breadcrumb + title
- *   onBlogClick  {function}    — navigates back to listing from breadcrumb
+ *   selectedPost {object|null}
+ *   onBlogClick  {function}
  */
 export default function BlogPageHeader({ selectedPost, onBlogClick }) {
   return (
@@ -11,19 +13,24 @@ export default function BlogPageHeader({ selectedPost, onBlogClick }) {
 
         {/* Breadcrumb */}
         <div className="bp-breadcrumb">
-          <a href="/">Home</a>
+          <Link to="/">Home</Link>
           <span className="bp-breadcrumb-sep">›</span>
 
           {selectedPost ? (
             <>
               <a
                 href="#"
-                onClick={(e) => { e.preventDefault(); onBlogClick(); }}
+                onClick={(e) => {
+                  e.preventDefault();
+                  onBlogClick();
+                }}
               >
                 Blog
               </a>
               <span className="bp-breadcrumb-sep">›</span>
-              <span className="bp-breadcrumb-current">{selectedPost.category}</span>
+              <span className="bp-breadcrumb-current">
+                {selectedPost.category}
+              </span>
             </>
           ) : (
             <span className="bp-breadcrumb-current">Blog</span>
@@ -45,7 +52,6 @@ export default function BlogPageHeader({ selectedPost, onBlogClick }) {
             </p>
           </>
         )}
-
       </div>
     </div>
   );
